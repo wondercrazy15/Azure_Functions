@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctionWithSendGrid", "AzureFunctionWithSendGrid\AzureFunctionWithSendGrid.csproj", "{CDBCFD17-2C87-4005-BB7F-1377ACCBFEDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDBCFD17-2C87-4005-BB7F-1377ACCBFEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDBCFD17-2C87-4005-BB7F-1377ACCBFEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDBCFD17-2C87-4005-BB7F-1377ACCBFEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDBCFD17-2C87-4005-BB7F-1377ACCBFEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8C91785-23D9-4DDE-A1D4-AADE4A38FDE1}
+	EndGlobalSection
+EndGlobal

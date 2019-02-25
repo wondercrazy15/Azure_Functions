@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container">
+    
+    <h2>Send Mail form</h2>
+    <form>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="YourEmail">Your Email:</label>
+                    <input id="YourEmail" name="YourEmail" class="form-control" autocomplete="off" />
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="Subject">Subject:</label>
+                    <input id="Subject" name="Subject" class="form-control" autocomplete="off" />
+                </div>
+            </div>            
+        </div>
+        <button type="button" id="btnSendMail" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-default" id="btnClear">Clear</button>
+        <p id="resultcalc"></p>
+    </form>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#btnSendMail").click(function () {
+            if (validatForm()) {
+                $.ajax({
+                    url: '/Home/SendGridMail',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: { 'YourEmail': $("#YourEmail").val(), 'Subject': $("#Subject").val() },
+                    success: function (result) {
+                        $("#resultcalc").empty().text(result);
+                    },
+                    error: function (result) {
+
+                    },
+
+                });
+            }
+        });
+
+        
+        $("#btnClear").click(function () {
+            $("#YourEmail,#Subject").val('');
+        });
+       
+    });
+    function validatForm() {
+        $("#YourEmail,#Subject").removeClass("error");
+        var result = true;
+        if ($("#YourEmail").val() == "" && $("#Subject").val() == "") {
+            $("#YourEmail,#Subject").addClass("error");
+            result = false;
+        }
+        if ($("#YourEmail").val() == "") {
+            $("#YourEmail").addClass("error");
+            result = false;
+        } else if ($("#Subject").val() == "") {
+            $("#Subject").addClass("error");
+            result = false;
+        } 
+        return result;
+    }
+
+   
+</script>
